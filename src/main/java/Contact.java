@@ -13,7 +13,8 @@ public class Contact {
     private LocalDate dateofbirth;
     private Long homephone;
     private Long cellphone;
-    private int age;
+    private Gender gender;
+
 
 
 
@@ -23,7 +24,8 @@ public class Contact {
     private String [] jobarea;
 
 
-    public Contact(String name, String surname, LocalDate dateofbirth, Long homephone, Long cellphone, String email, String[] jobarea) {
+    public Contact(String name, String surname, LocalDate dateofbirth, Long homephone, Long cellphone, String email, String[] jobarea,
+                   Gender gender) {
         this.name = name;
         this.surname = surname;
         this.dateofbirth=dateofbirth;
@@ -31,6 +33,8 @@ public class Contact {
         this.cellphone = cellphone;
         this.email = email;
         this.jobarea = jobarea;
+        this.gender=gender;
+
 
     }
 
@@ -38,7 +42,16 @@ public class Contact {
         return name;
     }
 
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
     public String getSurname() {
+
         return surname;
     }
 
@@ -90,8 +103,8 @@ public class Contact {
         this.jobarea = jobarea;
     }
 
-    public int calculateAge(LocalDate birthDate, LocalDate currentDate) {
-        currentDate=LocalDate.now();
+    public int calculateAge(LocalDate birthDate) {
+        LocalDate currentDate=LocalDate.now();
         Years diff = Years.yearsBetween(birthDate, currentDate);
         int age=diff.getYears();
         return age;
