@@ -14,17 +14,11 @@ public class Contact {
     private Long homephone;
     private Long cellphone;
     private Gender gender;
-
-
-
-
-
-
     private String email;
-    private String [] jobarea;
+    private JobArea [] jobarea;
 
 
-    public Contact(String name, String surname, LocalDate dateofbirth, Long homephone, Long cellphone, String email, String[] jobarea,
+    public Contact(String name, String surname, LocalDate dateofbirth, Long homephone, Long cellphone, String email, JobArea[] jobAreas,
                    Gender gender) {
         this.name = name;
         this.surname = surname;
@@ -32,7 +26,7 @@ public class Contact {
         this.homephone = homephone;
         this.cellphone = cellphone;
         this.email = email;
-        this.jobarea = jobarea;
+        this.jobarea = jobAreas;
         this.gender=gender;
 
 
@@ -71,7 +65,7 @@ public class Contact {
         return email;
     }
 
-    public String[] getJobarea() {
+    public JobArea[] getJobarea() {
         return jobarea;
     }
 
@@ -99,7 +93,7 @@ public class Contact {
         this.email = email;
     }
 
-    public void setJobarea(String[] jobarea) {
+    public void setJobarea(JobArea[] jobarea) {
         this.jobarea = jobarea;
     }
 
