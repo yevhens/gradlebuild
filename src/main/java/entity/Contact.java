@@ -1,4 +1,4 @@
-
+package entity;
 
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
@@ -15,22 +15,25 @@ public class Contact {
     private Long cellphone;
     private Gender gender;
     private String email;
-    private JobArea [] jobarea;
+    private JobArea[] jobarea;
+    private Product product;
 
 
-    public Contact(String name, String surname, LocalDate dateofbirth, Long homephone, Long cellphone, String email, JobArea[] jobAreas,
-                   Gender gender) {
+    public Contact(String name, String surname, LocalDate dateofbirth, Long homephone, Long cellphone, Gender gender, String email, JobArea[] jobarea, Product product) {
         this.name = name;
         this.surname = surname;
-        this.dateofbirth=dateofbirth;
+        this.dateofbirth = dateofbirth;
         this.homephone = homephone;
         this.cellphone = cellphone;
+        this.gender = gender;
         this.email = email;
-        this.jobarea = jobAreas;
-        this.gender=gender;
-
-
+        this.jobarea = jobarea;
+        this.product = product;
     }
+
+
+
+
 
     public String getName() {
         return name;
@@ -97,10 +100,9 @@ public class Contact {
         this.jobarea = jobarea;
     }
 
-    public int calculateAge(LocalDate birthDate) {
+    public int calculateAge() {
         LocalDate currentDate=LocalDate.now();
-        Years diff = Years.yearsBetween(birthDate, currentDate);
-        int age=diff.getYears();
-        return age;
+        Years diff = Years.yearsBetween(this.dateofbirth, currentDate);
+        return diff.getYears();
     }
 }

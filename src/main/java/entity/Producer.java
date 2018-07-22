@@ -1,8 +1,10 @@
+package entity;
+
 public class Producer {
 
-    String name;
-    String address;
-    Product product;
+    private String name;
+    private String address;
+    private Product product;
 
     public Producer(String name, String address, Product product) {
         this.name = name;
