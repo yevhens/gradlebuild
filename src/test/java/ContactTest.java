@@ -12,7 +12,7 @@ public class ContactTest {
 
         Contact contact=new Contact("Andrey","Baldis",new org.joda.time.LocalDate(1982,6,17),445678999L,
                 675677878L,"hjhj@mail.ru",new JobArea[]{JobArea.AGRICULTURE,JobArea.PRODUCTION},Gender.MALE);
-        int agecalcualted= contact.calculateAge();
+        int agecalcualted= contact.calculateAge(contact.getDateofbirth());
         int age=36;
         assertEquals(agecalcualted,age);
 

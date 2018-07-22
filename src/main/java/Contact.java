@@ -16,11 +16,10 @@ public class Contact {
     private Gender gender;
     private String email;
     private JobArea [] jobarea;
-    private Product product;
 
 
     public Contact(String name, String surname, LocalDate dateofbirth, Long homephone, Long cellphone, String email, JobArea[] jobAreas,
-                   Gender gender,Product product) {
+                   Gender gender) {
         this.name = name;
         this.surname = surname;
         this.dateofbirth=dateofbirth;
@@ -29,7 +28,6 @@ public class Contact {
         this.email = email;
         this.jobarea = jobAreas;
         this.gender=gender;
-        this.product=product;
 
 
     }
@@ -99,9 +97,9 @@ public class Contact {
         this.jobarea = jobarea;
     }
 
-    public int calculateAge() {
+    public int calculateAge(LocalDate birthDate) {
         LocalDate currentDate=LocalDate.now();
-        Years diff = Years.yearsBetween(this.dateofbirth, currentDate);
+        Years diff = Years.yearsBetween(birthDate, currentDate);
         int age=diff.getYears();
         return age;
     }
